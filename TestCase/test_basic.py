@@ -3,12 +3,7 @@
 # @Author  : WangJuan
 # @File    : Test_Basic.py
 
-import sys
-from os import path
-
 import allure
-import pytest
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 
 from Params.params import Basic
 from Conf.Config import Config
@@ -19,7 +14,7 @@ from Common import Assert
 
 class TestBasic:
 
-    @pytest.allure.feature('Home')
+    @allure.feature('Home')
     @allure.severity('blocker')
     @allure.story('Basic')
     def test_basic_01(self, action):
@@ -45,7 +40,7 @@ class TestBasic:
         assert test.assert_time(response['time_consuming'], 100)
         Consts.RESULT_LIST.append('True')
 
-    @pytest.allure.feature('Home')
+    @allure.feature('Home')
     @allure.severity('blocker')
     @allure.story('Basic')
     def test_basic_02(self, action):

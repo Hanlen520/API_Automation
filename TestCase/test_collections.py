@@ -3,14 +3,7 @@
 # @Author  : WangJuan
 # @File    : Test_Collections.py
 
-import sys
-from os import path
-
 import allure
-import pytest
-
-sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
-
 from Params.params import Collections
 from Conf.Config import Config
 from Common import Request
@@ -20,7 +13,7 @@ from Common import Assert
 
 class TestCollections:
 
-    @pytest.allure.feature('Home')
+    @allure.feature('Home')
     @allure.severity('normal')
     @allure.story('Collections')
     def test_collections_01(self, action):
@@ -44,7 +37,7 @@ class TestCollections:
         assert test.assert_in_text(response['body'], '软件测试-各种技能集合')
         Consts.RESULT_LIST.append('True')
 
-    @pytest.allure.feature('Home')
+    @allure.feature('Home')
     @allure.severity('blocker')
     @allure.story('Collections')
     def test_collections_02(self, action):
